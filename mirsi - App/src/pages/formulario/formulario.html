@@ -1,0 +1,49 @@
+<!--
+  Generated template for the FormularioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Informações do Paciente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form (ngSubmit)="salvarFormulario()">
+        <ion-item>
+          <ion-label floating>Nome</ion-label>
+          <ion-input [(ngModel)]="usuario.nome" name="nome"></ion-input>
+        </ion-item>
+        <ion-item (click)="selecionarData()">
+          <ion-label floating>Data de Nascimento</ion-label>
+          <ion-datetime disable="true" [(ngModel)]="usuario.dataNascimento" name="dataNascimento" displayFormat="DD/MM/YY"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Sexo</ion-label>
+           <!-- <ion-input [(ngModel)]="usuario.sexo" name="sexo"></ion-input>-->
+            <ion-select [(ngModel)]="usuario.sexo" name="sexo">
+              <ion-option value="Masculino">Masculino</ion-option>
+              <ion-option value="Feminino">Feminino</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Tipo Sanguineo</ion-label>
+            <ion-input [(ngModel)]="usuario.tipoSanguineo" name="tipoSanguineo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Peso (Kg)</ion-label>
+          <ion-input type="number" step="0.1" [(ngModel)]="usuario.peso" name="peso"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Alttura (m)</ion-label>
+            <ion-input type="number" step="0.1" [(ngModel)]="usuario.altura" name="altura"></ion-input>
+        </ion-item>
+        <button ion-button block type="submit">Finalizar</button>
+    </form>
+
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Monitoramento</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-left *ngIf="urlImagem">
+        <img [src]="urlImagem">
+      </ion-avatar>
+      
+       <h2 item-right> <b>{{ situacaoSaude }} </b> </h2>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
+      Data <h2 item-right> <b>{{ dataUltimoMonitoramento | date:"dd/MM/yyyy" }} </b></h2>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-icon ios="ios-pulse" md="md-pulse"></ion-icon>
+      Frequência Cardiaca
+      <h2 item-right> <b>{{ bpmAtual }} bpm</b></h2>
+    </ion-item>
+    <ion-card-content>
+      <canvas #graficoBPM></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-item>
+      <ion-icon ios="ios-thermometer" md="md-thermometer"></ion-icon>
+      Temperatura Corporal
+      <h2 item-right> <b>{{ temperaturaAtual }} ºC</b></h2>
+    </ion-item>
+    <ion-card-content>
+      <canvas #graficoTemperatura></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

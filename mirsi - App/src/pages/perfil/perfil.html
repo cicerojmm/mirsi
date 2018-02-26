@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+        <ion-avatar item-right>
+          <img *ngIf="url" [src]="url">
+          <ion-icon *ngIf="!url" ios="ios-person" md="md-person"></ion-icon>
+        </ion-avatar>
+        {{ usuario.nome }}
+        <button ion-button outline item-right (click)="tiraFoto()">
+            <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+        </button>
+    </ion-item>  
+    <ion-item>
+        <p> {{ usuario.idMonitor }}</p>
+      </ion-item>
+    <ion-item>
+      <p>Data Nascimento:</p>
+      <p> {{ usuario.dataNascimento | date:"dd/MM/yyyy"}}</p>
+    </ion-item>
+    <ion-item>
+        <p>Tipo Sanguíneo:</p>
+        <p>{{ usuario.tipoSanguineo }}</p>
+      </ion-item>
+    <ion-item>
+        <p>Sexo:</p>
+      <p>{{ usuario.sexo }}</p>
+    </ion-item>
+    <ion-item>
+        <p>Peso:</p>
+      <p>{{ usuario.peso }} Kg</p>
+    </ion-item>
+    <ion-item>
+        <p>Altura:</p>
+        <p>{{ usuario.altura }} m</p>
+    </ion-item>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,3 @@
+Flask==0.12.2
+Pyrebase==3.0.27
+Pyfcm==1.4.3

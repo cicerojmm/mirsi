@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Histórico
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="monitoramento">
+      <ion-segment-button value="bpm">
+        BPM
+      </ion-segment-button>
+      <ion-segment-button value="temperatura">
+        Temperatura
+      </ion-segment-button>
+      <ion-segment-button value="situacoes">
+        Situações
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div [ngSwitch]="monitoramento">
+
+    <ion-card *ngSwitchCase="'bpm'" class="cards-list">
+      <div *ngFor="let data of arrayData">
+        <ion-card-header>
+          {{ data | date:"dd/MM/yyyy" }}
+        </ion-card-header>
+
+        <ion-list>
+          <div *ngFor="let objeto of arrayDados" >
+
+            <ion-item *ngIf="objeto.data == data"> 
+              {{ objeto.bpm  }} bpm às {{ objeto.timestamp }}
+            </ion-item>
+            
+          </div>
+        </ion-list>
+      </div>
+    </ion-card>
+  
+    <ion-card *ngSwitchCase="'temperatura'" class="cards-list">
+       <div *ngFor="let data of arrayData">
+         <ion-card-header>
+           {{ data | date:"dd/MM/yyyy" }}
+         </ion-card-header>
+ 
+         <ion-list>
+           <div *ngFor="let objeto of arrayDados" >
+ 
+             <ion-item *ngIf="objeto.data == data"> 
+               {{ objeto.temp  }} ºC às {{ objeto.timestamp }}
+             </ion-item>
+             
+           </div>
+         </ion-list>
+       </div>
+    </ion-card>
+
+    <ion-card *ngSwitchCase="'situacoes'" class="cards-list">
+      <div *ngFor="let data of arrayData">
+        <ion-card-header>
+          {{ data | date:"dd/MM/yyyy" }}
+        </ion-card-header>
+
+        <ion-list>
+          <div *ngFor="let objeto of arrayDados" >
+
+            <ion-item *ngIf="objeto.data == data"> 
+              {{ objeto.situacaoSaude  }}  às {{ objeto.timestamp }}
+            </ion-item>
+            
+          </div>
+        </ion-list>
+      </div>
+   </ion-card>
+ 
+  </div>
+</ion-content>

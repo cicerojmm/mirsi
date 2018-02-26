@@ -1,0 +1,21 @@
+AngularFire2
+npm install firebase angularfire2 --save
+
+DatePicker
+ionic cordova plugin add cordova-plugin-datepicker
+npm install --save @ionic-native/date-picker
+
+FCM
+ionic cordova plugin add cordova-plugin-fcm
+npm install --save @ionic-native/fcm
+
+Camera
+ionic cordova plugin add cordova-plugin-camera
+npm install --save @ionic-native/camera
+
+Vibration
+ionic cordova plugin add cordova-plugin-vibration
+npm install --save @ionic-native/vibration
+
+ChartJS
+npm install chart.js --save
